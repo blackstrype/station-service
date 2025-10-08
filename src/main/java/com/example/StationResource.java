@@ -1,7 +1,6 @@
 package com.example;
 
 import io.quarkus.logging.Log;
-import jakarta.annotation.security.RolesAllowed;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
@@ -13,7 +12,6 @@ import java.util.concurrent.ThreadLocalRandom;
 @Path("/stations")
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
-@RolesAllowed("station-reader")
 public class StationResource {
     @ConfigProperty(name = "simulated.wait.millis", defaultValue = "0")
     private long simulatedWaitMillis;
