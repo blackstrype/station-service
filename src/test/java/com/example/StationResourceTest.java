@@ -1,7 +1,6 @@
 package com.example;
 
 import io.quarkus.test.junit.QuarkusTest;
-import io.quarkus.test.security.TestSecurity;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.condition.DisabledInNativeImage;
 
@@ -14,7 +13,6 @@ import static org.hamcrest.Matchers.hasSize;
 class StationResourceTest {
 
     @Test
-    @TestSecurity(user = "train-line-service", roles = "station-reader")
     void testStationsEndpoint() {
         given()
                 .when().get("/stations")
