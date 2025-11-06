@@ -43,10 +43,10 @@ jobs:
           distribution: 'temurin'
           cache: maven
 
-      - name: Build Quarkus Application
+      - name: Package the Application
         run: |
           chmod +x ./mvnw
-          ./mvnw quarkus:build
+          ./mvnw package
 
       # Install the cosign tool except on PR
       # https://github.com/sigstore/cosign-installer
