@@ -12,6 +12,6 @@ public class RequestLogger implements ContainerRequestFilter {
     @Override
     public void filter(ContainerRequestContext requestContext) {
         String authHeader = requestContext.getHeaderString("Authorization");
-        LOG.infof("Received Authorization header: %s", authHeader);
+        LOG.debugf("Received Authorization header: %s", authHeader);
     }
 }
